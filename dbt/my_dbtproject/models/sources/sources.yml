@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: retail  # This matches your dataset ID
+    database: airflow-retail-data-pipeline  # Replace with your actual project ID
+    tables:
+      - name: invoice_data
+      - name: country

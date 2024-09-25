@@ -1,0 +1,12 @@
+my_dbtproject:
+ target: dev
+ outputs:
+  dev:
+    type: bigquery
+    method: service-account
+    keyfile: /usr/app/data/gcp/service_account.json
+    project: airflow-retail-data-pipeline
+    dataset: retail
+    threads: 2
+    timeout_seconds: 500
+    location: US
