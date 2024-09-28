@@ -6,11 +6,13 @@ End-to-End ETL Pipeline with Airflow, dbt, and Google Cloud's BigQuery integrati
 Project Contents
 ================
 
-This project demonstrates an end-to-end ETL pipeline using Apache Airflow, dbt, Google BigQuery, and SODA, leveraging the online retail dataset from Kaggle. The pipeline is designed to perform the following tasks:
+This project demonstrates an end-to-end ETL pipeline using Apache Airflow, dbt (Data Build Tool), and Google BigQuery, leveraging the online retail dataset from Kaggle. The pipeline is designed to perform the following tasks:
 
 - Extract: Read data from a local file.
-- Load: Transfer data to Google Cloud Storage (GCS) and then to BigQuery.
-- Quality Check: Perform data quality checks using python programming language.
+- Load: Transfer the extracted data to Google Cloud Storage (GCS) and load it into BigQuery.
+- Data Quality Checks: Ensure data integrity and quality using Python-based checks.
+- Transform: Utilize dbt to build and run SQL models that transform the data within the BigQuery dataset named "retail".
+- Report: Implement dbt models to enable report generation in Metabase for business analytics and insights.
 
 Project Structure
 ===========================
@@ -51,7 +53,16 @@ Usage
 
 dbt (Data Build Tool)
 -----------------------
+SQL models are created and run to clean, transform, and aggregate the data for downstream reporting and analysis.
+Metabase: Metabase is used for visualizing the transformed data and generating reports that provide insights into the retail business's performance and trends.
 
+The final, transformed datasets from dbt are connected to Metabase.
+Dashboards and reports are built in Metabase, providing a user-friendly interface for analyzing the retail business's key metrics.
+
+Some of the key reports include:
+1. Top 10 products by quantity sold
+2. Total Revenue per month
+3. Primary Markets
 
 
 
